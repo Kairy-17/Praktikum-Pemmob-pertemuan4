@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.adamanakjahat.ui.screen.BasicInfoScreen
 import com.example.adamanakjahat.ui.screen.HubungiKamiScreen
 import com.example.adamanakjahat.ui.theme.JualanTheme
 
@@ -21,20 +20,11 @@ class MainActivity : ComponentActivity() {
                 
                 NavHost(
                     navController = navController,
-                    startDestination = "basic_info"
+                    startDestination = "hubungi_kami"
                 ) {
-                    composable("basic_info") {
-                        BasicInfoScreen(
-                            onNavigateToForm = {
-                                navController.navigate("form_screen")
-                            }
-                        )
-                    }
-                    composable("form_screen") {
+                    composable("hubungi_kami") {
                         HubungiKamiScreen(
-                            onBackClick = {
-                                navController.popBackStack()
-                            }
+                            navController = navController
                         )
                     }
                 }

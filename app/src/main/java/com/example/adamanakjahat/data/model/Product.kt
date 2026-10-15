@@ -7,5 +7,8 @@ data class Product(
     val name: String,
     val description: String,
     val categoryId: Int,
-    @DrawableRes val imageRes: Int
+    @DrawableRes val imageRes: Int,
+    val price: Int = 15000,
+    val stock: Int = 10,
+    val img: String = "dummy_product"
 )
